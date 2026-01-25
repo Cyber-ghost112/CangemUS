@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cangem USA Careers | Apply for Financial Positions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background-color: #00008b;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+        }
+        #intro {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        #intro h1 {
+            color: #00008b;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        #intro p {
+            font-size: 18px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        #application-form {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        #application-form h2 {
+            color: #00008b;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"] {
+            border: none;
+            padding: 0;
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            background-color: #b22222;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #8b1a1a;
+        }
+        footer {
+            background-color: #00008b;
+            color: white;
+            padding: 50px 20px 20px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        .footer-column h3 {
+            color: #b22222;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .contact-form button {
+            background-color: #b22222;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #8b1a1a;
+        }
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .contact-info a {
+            color: #ffe4e1;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 250px;
+                background-color: #00008b;
+                padding: 20px;
+                box-shadow: -2px 4px 10px rgba(0,0,0,0.3);
+                z-index: 1000;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                margin: 15px 0;
+                text-align: left;
+            }
+            nav ul li a {
+                font-size: 18px;
+            }
+            #intro h1 {
+                font-size: 36px;
+            }
+            #intro p {
+                font-size: 16px;
+            }
+            #application-form h2 {
+                font-size: 28px;
+            }
+            .footer-container {
+                flex-direction: column;
+            }
+            .footer-column {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Images/cangemlogo.jpg" alt="Cangem USA Logo">
+            Cangem USA
+        </div>
+        <div class="nav-container">
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="https://codalegend.github.io/CangemUS/">Home</a></li>
+                    <li><a href="https://www.cangemglobal.com/corporate-governance">About Cangem</a></li>
+                    <li><a href="https://www.cangemglobal.com/investors">Investor Relations</a></li>
+                    <li><a href="https://www.cangemglobal.com/international-trade-news">News & Publications</a></li>
+                    <li><a href="https://www.cangemglobal.com/legal">Legal</a></li>
+                    <li><a href="tel:+18582804516">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="intro">
+        <h1>Join Cangem USA – Apply Today!</h1>
+        <p>At Cangem USA, we are committed to fostering a dynamic and innovative environment where talented individuals can thrive. As the US subsidiary of Cangem Global, we specialize in international trade consulting, logistics, and commodities trading. We are excited to expand our team with passionate professionals who can contribute to our mission of delivering world-class services to our clients.</p>
+        <p>Our finance department plays a crucial role in ensuring smooth operations and strategic growth. If you have a background in finance and are looking for an opportunity to make a significant impact, explore our open positions below and submit your application. We offer competitive salaries, benefits, and opportunities for professional development.</p>
+    </section>
+
+    <section id="application-form">
+        <h2>Job Application Form</h2>
+        <form action="https://usebasin.com/f/13fedf09dc0b" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="position">Select Position</label>
+                <select id="position" name="position" required>
+                    <option value="">-- Choose a Position --</option>
+                    <option value="clerk_assistant">Clerk Assistant</option>
+                    <option value="personal_assistant">Personal Assistant</option>
+                    <option value="payroll_officer">Payroll Officer</option>
+                    <option value="accountant">Accountant</option>
+                    <option value="financial_analyst">Financial Analyst</option>
+                    <option value="finance_manager">Finance Manager</option>
+                    <option value="director_finance">Director of Finance</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="resume">Upload Resume (PDF or Word)</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            </div>
+            <button type="submit" class="submit-button">Submit Application</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Get in Touch</h3>
+                <form class="contact-form" action="https://usebasin.com/f/dbffab71a16d" method="POST">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <textarea name="comment" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="footer-column contact-info">
+                <h3>Contact Us</h3>
+                <p><strong>Address:</strong><br>
+                Cangem USA<br>
+                123 Trade Tower, Suite 500<br>
+                New York, NY 10005<br>
+                United States</p>
+
+                <p><strong>Phone:</strong><br>
+                <a href="tel:+18582804516">+1 (858) 280-4516</a><br>
+                <a href="tel:+16625457123">+1 (662) 545-7123</a></p>
+
+                <p><strong>Email:</strong><br>
+                <a href="mailto:info@cangemusa.com">info@cangemusa.com</a></p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Cangem USA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cangem USA | International Trade Consulting | Export, Import & Shipping Training | USA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background for USA theme */
+            color: #333;
+        }
+        header {
+            background-color: #00008b; /* Dark blue header */
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /*Video*/
+        
+        .video-selection {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            color: white;
+            background-color: #001f3f; /* Fallback dark blue if no video */
+        }
+        .fashion-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .video-content{
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-align: center;
+            top: 50%;
+            transform: translate(-50%);
+            padding: 0 20px;
+        }
+        .video-selection h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #b22222; /* Red accent for main headline */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin: 0;
+        }
+        /*Responsive*/
+        @media (max-width: 768px) {
+            .video-content h2{
+                font-size: 2rem;
+            } 
+        }
+        .video-content p {
+            font-size: 1rem
+        }
+        video-section{
+            height: 50vh;
+            overflow: hidden;
+        }
+        section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        #services .service {
+            flex: 1 1 300px;
+            max-width: 400px;
+        }
+        #services h2 {
+            color: #00008b;
+            font-size: 28px;
+        }
+        #services img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .read-more {
+            display: inline-block;
+            margin-top: 30px;
+            color: #b22222;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        #careers {
+            background-color: #ffffff;
+            padding: 60px 20px;
+        }
+        #careers h2 {
+            color: #00008b;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #careers p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #b22222;
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #8b1a1a;
+        }
+        #awards {
+            background-color: #ffe4e1; /* Light red for awards section */
+        }
+        #awards img {
+            width: 300px;
+            height: auto;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        footer {
+            background-color: #00008b;
+            color: white;
+            padding: 50px 20px 20px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        .footer-column h3 {
+            color: #b22222;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .contact-form button {
+            background-color: #b22222;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #8b1a1a;
+        }
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .contact-info a {
+            color: #ffe4e1;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 250px;
+                background-color: #00008b;
+                padding: 20px;
+                box-shadow: -2px 4px 10px rgba(0,0,0,0.3);
+                z-index: 1000;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                margin: 15px 0;
+                text-align: left;
+            }
+            nav ul li a {
+                font-size: 18px;
+            }
+            .footer-container {
+                flex-direction: column;
+            }
+            .footer-column {
+                text-align: center;
+            }
+        }
+        .word{
+            background-color: #00008b;
+            color: white;
+            height: 100%;
+            width: 90%;
+            padding: 20px;
+        }
+        @media (min-width: 1025px){
+            .word{
+                width: 100%;
+                padding: 0px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Images/cangemlogo.jpg" alt="Cangem USA Logo">
+            Cangem USA
+        </div>
+        <div class="nav-container">
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="https://www.cangemglobal.com/corporate-governance">About Cangem</a></li>
+                    <li><a href="https://www.cangemglobal.com/investors">Investor Relations</a></li>
+                    <li><a href="https://www.cangemglobal.com/international-trade-news">News & Publications</a></li>
+                    <li><a href="https://www.cangemglobal.com/legal">Legal</a></li>
+                    <li><a href="tel:+18582804516">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="video-selection">
+        <div class="video-overlay"></div>
+        <video autoplay loop muted playsinline
+            poster="Images/VideoPoster.jpg">
+            <source src="Videos/introductionvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            <h1>An International Trade Consultant that takes care of everything!</h1>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="service">
+            <h2>Export & Import Consulting</h2>
+            <img src="Images/Export.jpg" alt="Export & Import Consulting Image">
+        </div>
+        <div class="service">
+            <h2>Freight & Logistics Consulting</h2>
+            <img src="Images/Freight.jpg" alt="Freight & Logistics Consulting Image">
+        </div>
+        <div class="service">
+            <h2>Trade Compliance Training</h2>
+            <img src="Images/TradeCompliance.jpg" alt="Trade Compliance Training Image">
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Cangem</h2>
+        <img src="Images/Certificate1.jpg" alt="Trade Compliance Training Image" width="300px">
+        <p>Cangem USA is the United States subsidiary of Cangem Global, a multinational privately-held consulting corporation active in international/foreign trade, international logistics (bulk vessels & containers) and commodities trading consulting. Cangem has offices in key time zones around the globe and provides discrete consulting services to private and public sector entities, with a focus on USA markets.</p>
+        <a href="https://www.cangemglobal.com/corporate-profile" class="read-more">Read More</a>
+    </section>
+
+    <section id="grow">
+        <h2>Grow With Cangem</h2>
+        <img src="Images/Grow.jpg" alt="Trade Compliance Training Image" width="300px">
+        <p>We are always open to new ventures and investments. Meanwhile, we also welcome commodity traders, consultants and medical professionals to be a part of Cangem if they agree to our prospect advice. We'd be interested to hear from you if you are in the same business as Cangem.</p>
+        <a href="https://www.cangemglobal.com/work-with-us" class="read-more">Read More</a>
+    </section>
+
+    <section id="profile">
+        <h2>Corporate Profile</h2>
+        <img src="Images/Corporate.jpg" alt="Trade Compliance Training Image" width="300px">
+        <p>A summary of various sectors that Cangem USA is active in and various services that we provide. Get to know us, our interests, our business and how we do it. Cangem is active in International Trade (export-import) Consulting, Shipping & Logistics consulting, and commodities consulting.</p>
+        <a href="https://www.cangemglobal.com/corporate-profile" class="read-more">Read More</a>
+    </section>
+
+    <section id="investors">
+        <h2>Investor Relations</h2>
+        <img src="Images/Certificate2.jpg" alt="Trade Compliance Training Image" width="300px">
+        <p>We have built strong relationships with our clients over the years and they have come to expect traditional, world-class service from Cangem Global. This division moves us and our investors beyond these traditional roles in International trade and shipping and logistics consulting.</p>
+        <a href="https://www.cangemglobal.com/investors" class="read-more">Read More</a>
+    </section>
+
+    <section id="founder">
+        <div class="word">
+            <h2>A word from our founder director</h2>
+            <p>As the director of a multinational consulting corporation, a chapter chairperson of the International Trade Council & having worked as a business mentor with The Princes Trust Canada (now known as The King's Trust, founded by HM King Charles III, the king of the United Kingdom), I know that there are a lot of people relying on me.</p>
+            <p>I always want to be cognizant of the current market conditions & scenarios, all government, private, JV & PPP opportunities and the risks involved at each and every step.</p>
+            <p>Our team, the "Cangem Global" shall always place our client's benefits as ours and we all shall work as a global team and not individually.</p>
+            <p>Ethics, Responsibility, Transparency and Hard Work are our pillars.</p>
+        </div>
+    </section>
+
+    <section id="news">
+        <h2>News & Publications</h2>
+        <img src="Images/CertificatesExtraImage.jpg" alt="Quality in Business Certification" width="300px">
+        <p>See Cangem in news, our latest press releases, our corporate updates, our latest social & business roles, upcoming seminars & webinars and catch up with Cangem.</p>
+        <a href="https://www.cangemglobal.com/international-trade-news" class="read-more">Read More</a><br><br>
+        
+    </section>
+
+    <section id="careers">
+        <h2>Join Our Team – We're Hiring!</h2>
+        <p>Cangem USA is expanding its operations and actively recruiting talented professionals in the finance sector. We are seeking experienced individuals for key financial roles to support our growing international trade consulting, logistics, and commodities trading divisions. If you have expertise in financial analysis, trade finance, risk management, compliance, or related fields, we want to hear from you.</p>
+        <a href="careers.html" class="cta-button">View Open Positions & Apply Now</a>
+    </section>
+
+    <section id="awards">
+        <h2>Awards & Achievements</h2>
+        <p>Cangem has come far from a humble beginning back in 2009. Our journey of achievements has a tale of its own, the recent chapters being the Go Global 2021 award and the "Quality in Business" certification from the International Trade Council. Visioning as a world leader in international trade, we want to provide the best to our clients and receiving recognition for that is nothing but a proof of the same.</p>
+        <img src="Images/Awards.jpg" alt="Go Global 2021 Award">
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Get in Touch</h3>
+                <form class="contact-form" action="https://usebasin.com/f/dbffab71a16d" method="POST">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <textarea name="comment" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="footer-column contact-info">
+                <h3>Contact Us</h3>
+                <p><strong>Address:</strong><br>
+                Cangem USA<br>
+                123 Trade Tower, Suite 500<br>
+                New York, NY 10005<br>
+                United States</p>
+
+                <p><strong>Phone:</strong><br>
+                <a href="tel:+18582804516">+1 (858) 280-4516</a><br>
+                <a href="tel:+16625457123">+1 (662) 545-7123</a></p>
+
+                <p><strong>Email:</strong><br>
+                <a href="mailto:info@cangemusa.com">info@cangemusa.com</a></p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Cangem USA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
